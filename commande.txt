@@ -1,0 +1,1 @@
+gcc main.c naive_compression.c PGM.c Mapping.c --std=c99 --pedantic -Wall -Wextra -Wmissing-prototypes -DNDEBUG -lm -o compress
