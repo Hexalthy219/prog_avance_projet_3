@@ -185,19 +185,7 @@ static Compression compressImage(const PGM *image, size_t nLevels)
 
 
     // Free local resources
-    for(int i; i<hist->length; i++)
-        printf("%zd\n", hist->count[i]);
-    
-    printf("\n\n");
-    for(int i =0; i<mapping->nLevels; i++)
-        printf("%zd", mapping->levels[i]);
-    
-    printf("\n\n");
-    
-    for(int i =0 ; i<=mapping->nLevels;i++)
-        printf("%zd\n", mapping->thresholds[i]);
-    if(!mapping->thresholds)
-        printf("%zu\n", mapping->nLevels);
+
     freeAll(hist, mapping, NULL);
 
     return compression;

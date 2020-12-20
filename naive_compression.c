@@ -2,6 +2,7 @@
  * Implementation of a naive algorithm that compress an image with
  * equal bins.
  ***********************************************************************/
+#include <stdio.h>
 
 #include "compression.h"
 
@@ -21,6 +22,10 @@ Mapping* computeMapping(const Histogram* histogram, size_t nLevels)
         mapping->thresholds[i] = (size_t)t;
         mapping->levels[i] = (size_t)(t-shift);
     }
+    
+    for(int i = 0; i<nLevels; i++)
+        printf("levels : %d\n", mapping->levels[i]);
+
 
     return mapping;
 
